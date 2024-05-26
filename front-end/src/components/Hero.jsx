@@ -8,11 +8,16 @@ function Hero(){
       <div className="col-10 col-sm-8 col-lg-6">
         <img src="images/food.jpg" className="d-block mx-lg-auto img-fluid" alt="Food Bowl Photo" width="400" height="400" />
       </div>
-      <div className="col-lg-6">
-        <h1 className="display-5 fw-bold lh-1 mb-3">Discover your next favorite recipe!</h1>
+      <div className="col-lg-6 d-flex flex-column">
+        <h1 className="w-100 display-5 fw-bold lh-1 mb-3">Discover your next favorite recipe!</h1>
         <p className="lead">Home-made meals made easy.</p>
-        <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-        </div>
+       <form class="w-100 ">
+          <div class="form-floating mb-3">
+            <input name="recipeName" type="text" class="form-control" id="floatingInput" placeholder="A"/>
+            <label for="floatingInput">Recipe Name</label>
+          </div>
+          <button class="w-100 btn btn-lg btn-primary" type="submit">Search</button>
+        </form>
       </div>
     </div>
   </div>
