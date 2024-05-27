@@ -16,7 +16,7 @@ app.post("/", async (req,res) => {
   try {
     const result = await axios.get(API_URL+"&q="+req.body.recipe);
     const recipes = result.data.hits.slice(0,22);
-    console.log(recipes.length);
+    //console.log(recipes.length);
     res.send(recipes);
   } catch (error){
     console.log(error);
