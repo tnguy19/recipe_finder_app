@@ -1,6 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 
-function Hero(){
+function Hero(props){
+    const [textInput, setTextInput] =useState("");
+    
+    function handleChange(event){
+      const value = event.target.value;
+      setTextInput(value);
+    }
+
+    function submitSearch(event){
+      props.onSubmit(textInput);
+      setTextInput("");
+      event.preventDefault();
+    }
+
     return (
         <>
         <div className="container col-xxl-8 px-4 " >
@@ -11,9 +24,9 @@ function Hero(){
       <div className="col-lg-6 d-flex flex-column">
         <h1 className="w-100 display-5 fw-bold lh-1 mb-3">Discover your next favorite recipe!</h1>
         <p className="lead">Home-made meals made easy.</p>
-       <form class="w-100 ">
+       <form class="w-100 " onSubmit={submitSearch}>
           <div class="form-floating mb-3">
-            <input name="recipeName" type="text" class="form-control" id="floatingInput" placeholder="A"/>
+            <input name="recipeName" type="text" class="form-control" id="floatingInput" value={textInput} onChange={handleChange}/>
             <label for="floatingInput">Recipe Name</label>
           </div>
           <button class="w-100 btn btn-lg btn-primary" type="submit">Search</button>
