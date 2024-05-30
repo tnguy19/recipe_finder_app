@@ -17,7 +17,6 @@ function Container(props){
   </ul>
   <div className="card-body">
     <a href={props.recipeLink} className="card-link">Recipe Link</a>
-    <a href="" className="card-link">Another link</a>
   </div>
 </div>
   </div>
